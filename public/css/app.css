@@ -12153,21 +12153,51 @@ img {
   width: 100px;
 }
 
+body {
+  background-image: url(https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29taWNzfGVufDB8fDB8fA%3D%3D&w=1000&q=80);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 h1,
 .h1 {
   text-align: center;
   padding-top: 50px;
-  color: red;
+  color: rgb(0, 110, 255);
+}
+
+.titolo {
+  color: rgb(0, 0, 0);
 }
 
 p {
   margin-top: 50px;
   padding: 20px;
   border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+span {
+  padding: 30px 0 30px 0;
 }
 
 .box-ir {
   margin-top: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.box-ir .table {
+  color: bisque;
+}
+
+.img-box {
+  margin: 20px 0 20px 0;
+}
+
+.img-box img {
+  width: 250px;
 }
 
