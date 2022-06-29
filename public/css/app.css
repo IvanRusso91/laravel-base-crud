@@ -12153,3 +12153,21 @@ img {
   width: 100px;
 }
 
+h1,
+.h1 {
+  text-align: center;
+  padding-top: 50px;
+  color: red;
+}
+
+p {
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.box-ir {
+  margin-top: 40px;
+}
+
