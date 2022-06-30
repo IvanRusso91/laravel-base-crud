@@ -10,7 +10,7 @@ class Comic extends Model
          'title',
          'type',
          'description',
-         'slag',
+         'slug',
          'image',
     ];
 }

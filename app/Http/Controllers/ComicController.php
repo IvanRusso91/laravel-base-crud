@@ -38,7 +38,7 @@ class ComicController extends Controller
     {
         $data = $request-> all();
         $new_comic= new Comic();
-        $data['slag'] = Str::slug($data['title'], '-');
+        $data['slug'] = Str::slug($data['title'], '-');
         $new_comic->fill($data);
 
         $new_comic->save();
@@ -89,6 +89,7 @@ class ComicController extends Controller
 
         $data= $request->all();
         $data['slug']=Str::slug($data['title'], '-');
+
         $comic->update($data);
 
         return redirect()->route('comics.show' , $comic);
@@ -101,8 +102,11 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index');
+
     }
 }
