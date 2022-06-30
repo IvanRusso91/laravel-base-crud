@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container text-center ">
-        <h1 class="titolo">{{$comic->title}} <a class="btn btn-primary" href="">EDIT</a></h1>
+        <h1 class="titolo">{{$comic->title}} <a class="btn btn-primary" href="{{route('comics.edit', $comic)}}">EDIT</a></h1>
         <span class="bg-info badge text-bg-info">{{$comic->type}}</span>
 
             <div class="img-box">
