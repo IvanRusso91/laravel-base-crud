@@ -10,6 +10,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{ route('comics.index')}}">Index</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ route('comics.create')}}">Aumenta la collezione</a>
+          </li>
         </ul>
       </div>
     </div>

@@ -9,6 +9,9 @@
             <div class="img-box">
                 <img src="{{$comic->image}}" alt="{{$comic->title}}">
             </div>
+            <div>
+                <p>{{ $comic->description }}</p>
+            </div>
 
             <a class="btn btn-secondary" href="{{ route('comics.index')}}"><< Torna</a>
 
