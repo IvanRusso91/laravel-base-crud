@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Comic;
+use App\Http\Requests\ComicRequest;
+
 class ComicController extends Controller
 {
     /**
@@ -34,34 +36,9 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
 
-        $request->validate(
-            [
-              'title' => 'required | max:50 | min:3',
-              'image' => 'required | max:255 | min:10',
-              'type' => 'required | max:50 | min:3',
-              'description' => 'min:10'
-            ],
-            [
-                'title.required'=> 'il campo title è obbligatorio',
-                'title.max'=> 'il campo title deve avere al amssimo :max carratteri',
-                'title.max'=> 'il campo title deve avere al amssimo :min carratteri',
-
-                'image.required'=> 'il campo Url è obbligatorio',
-                'image.max'=> 'il campo Url deve avere al amssimo :max carratteri',
-                'image.max'=> 'il campo Url deve avere al amssimo :min carratteri',
-
-                'type.required'=> 'il campo type è obbligatorio',
-                'type.max'=> 'il campo type deve avere al amssimo :max carratteri',
-                'type.max'=> 'il campo type deve avere al amssimo :min carratteri',
-
-                'description.min' => 'la descrizione deve avere minimo :min caratteri'
-
-
-            ],
-        );
 
         $data = $request-> all();
         $new_comic= new Comic();
@@ -111,34 +88,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
 
-        $request->validate(
-            [
-              'title' => 'required | max:50 | min:3',
-              'image' => 'required | max:255 | min:10',
-              'type' => 'required | max:50 | min:3',
-              'description' => 'min:10'
-            ],
-            [
-                'title.required'=> 'il campo title è obbligatorio',
-                'title.max'=> 'il campo title deve avere al amssimo :max carratteri',
-                'title.max'=> 'il campo title deve avere al amssimo :min carratteri',
-
-                'image.required'=> 'il campo Url è obbligatorio',
-                'image.max'=> 'il campo Url deve avere al amssimo :max carratteri',
-                'image.max'=> 'il campo Url deve avere al amssimo :min carratteri',
-
-                'type.required'=> 'il campo type è obbligatorio',
-                'type.max'=> 'il campo type deve avere al amssimo :max carratteri',
-                'type.max'=> 'il campo type deve avere al amssimo :min carratteri',
-
-                'description.min' => 'la descrizione deve avere minimo :min caratteri'
-
-
-            ],
-        );
 
         $data= $request->all();
         $data['slug']=Str::slug($data['title'], '-');
